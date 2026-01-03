@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Rick and Morty characters</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="search_hint">Search characters</string>
+    <string name="base_character_status">Unknown status</string>
+    <string name="base_character_name">Unknown name</string>
+    <string name="base_character_gender">Unknown gender</string>
+    <string name="base_character_species">Unknown species</string>
+
+    <!-- Filters -->
+    <string name="status_filter_label">Status</string>
+    <string name="status_filter_alive">Alive</string>
+    <string name="status_filter_dead">Dead</string>
+    <string name="status_filter_unknown">Unknown</string>
+
+    <string name="species_filter_label">Species</string>
+    <string name="species_filter_hint">Species</string>
+
+    <string name="type_filter_label">Type</string>
+    <string name="type_filter_hint">Type</string>
+
+    <string name="gender_filter_label">Gender</string>
+    <string name="gender_filter_male">Male</string>
+    <string name="gender_filter_female">Female</string>
+    <string name="gender_filter_genderless">Genderless</string>
+    <string name="gender_filter_unknown">Unknown</string>
+
+    <string name="confirm_button_text">Confirm</string>
+    <string name="clear_button_text">Clear</string>
+
+    <string name="empty_filtered_list_message">No characters found</string>
+
+    <!-- Character page -->
+    <string name="base_character_type">No type</string>
+    <string name="character_origin_label">Origin</string>
+    <string name="character_origin_unknown">Unknown</string>
+    <string name="character_location_label">Location</string>
+    <string name="character_location_unknown">Unknown</string>
+    <string name="character_episodes_label">Episodes with this character appeared</string>
+    <string name="base_episode_number">1000</string>
+    <string name="base_episode_name">Unknown episode name</string>
+
+    <!-- Errors -->
+    <string name="loading_error">Download error\nCheck the Internet, try to return to the previous page or restart the application</string>
+    <string name="title_activity_pages">PagesActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+</resources>

@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/search_et"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:hint="@string/search_hint"
+            android:layout_weight="1"
+            style="@style/CustomEditText"/>
+
+        <ImageButton
+            android:id="@+id/find_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/search"/>
+
+        <ImageButton
+            android:id="@+id/filter_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/filter_empty"/>
+    </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="visible">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/loading_error_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/darker_white"
+                android:textSize="20sp"
+                android:visibility="gone"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/character_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_marginBottom="8dp"/>
+        </LinearLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/filter_page"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:paddingTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="@string/status_filter_label"/>
+
+            <CheckBox
+                android:id="@+id/alive_status_CB"
+                android:text="@string/status_filter_alive"
+                style="@style/CustomCheckBox"/>
+
+            <CheckBox
+                android:id="@+id/dead_status_CB"
+                style="@style/CustomCheckBox"
+                android:text="@string/status_filter_dead"/>
+
+            <CheckBox
+                android:id="@+id/unknown_status_CB"
+                style="@style/CustomCheckBox"
+                android:text="@string/status_filter_unknown"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/species_filter_label"
+                    android:textColor="@color/white"/>
+
+                <EditText
+                    android:id="@+id/species_filter_ET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="100dp"
+                    android:hint="@string/species_filter_hint"
+                    android:textSize="14sp"
+                    style="@style/CustomEditText"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/type_filter_label"
+                    android:textColor="@color/white"/>
+
+                <EditText
+                    android:id="@+id/type_filter_ET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="100dp"
+                    android:hint="@string/type_filter_hint"
+                    android:textSize="14sp"
+                    style="@style/CustomEditText"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="@string/gender_filter_label"
+                android:layout_marginTop="15dp"/>
+
+            <CheckBox
+                android:id="@+id/male_gender_CB"
+                android:text="@string/gender_filter_male"
+                style="@style/CustomCheckBox"/>
+
+            <CheckBox
+                android:id="@+id/female_gender_CB"
+                android:text="@string/gender_filter_female"
+                style="@style/CustomCheckBox"/>
+
+            <CheckBox
+                android:id="@+id/genderless_gender_CB"
+                android:text="@string/gender_filter_genderless"
+                style="@style/CustomCheckBox"/>
+
+            <CheckBox
+                android:id="@+id/unknown_gender_CB"
+                android:text="@string/gender_filter_unknown"
+                style="@style/CustomCheckBox"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="2"/>
+
+            <Button
+                android:id="@+id/confirm_filters_button"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="@string/confirm_button_text"
+                android:backgroundTint="@color/darker_white"
+                android:layout_marginHorizontal="15dp"
+                android:layout_weight="1"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="2" />
+
+            <Button
+                android:id="@+id/clear_filters_button"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="@string/clear_button_text"
+                android:backgroundTint="@color/darker_white"
+                android:layout_marginHorizontal="15dp"
+                android:layout_weight="1"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="2" />
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/button_left"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/rectangle_left_rounded_gray"
+            android:src="@drawable/left_arrow_gray"/>
+
+        <TextView
+            android:id="@+id/pagination_page_left"
+            android:text="1"
+            style="@style/PaginationSelectedItem"/>
+
+        <TextView
+            android:id="@+id/pagination_page_center"
+            android:text="2"
+            style="@style/PaginationNotSelectedItem"/>
+
+        <TextView
+            android:id="@+id/pagination_page_right"
+            android:text="3"
+            style="@style/PaginationNotSelectedItem"/>
+
+        <ImageButton
+            android:id="@+id/button_right"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/rectangle_right_rounded_white"
+            android:src="@drawable/right_arrow_white"/>
+
+    </LinearLayout>
+
+</LinearLayout>

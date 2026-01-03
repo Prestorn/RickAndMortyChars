@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/character_one"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:background="@drawable/rounded_rectangle_gray"
+        android:layout_margin="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/character_one_image"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:minWidth="100dp"
+                android:src="@drawable/empty_image"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/RoundedImageView" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/status_background"
+                app:layout_constraintBottom_toBottomOf="@+id/character_one_image"
+                app:layout_constraintEnd_toEndOf="@+id/character_one_image"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="5dp"
+                android:paddingStart="10dp">
+
+                <ImageView
+                    android:id="@+id/character_one_status_image"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/gray_circle"/>
+
+                <TextView
+                    android:id="@+id/character_one_status_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/base_character_status"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/character_one_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="@string/base_character_name"
+            android:textSize="20sp"
+            android:layout_marginHorizontal="5dp"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginVertical="5dp"
+            android:paddingHorizontal="5dp">
+
+            <TextView
+                android:id="@+id/character_one_gender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="@string/base_character_gender"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:textAlignment="viewEnd"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="|"
+                android:textSize="20sp"
+                android:layout_marginHorizontal="5dp"/>
+
+            <TextView
+                android:id="@+id/character_one_species"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="@string/base_character_species"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:textAlignment="viewStart"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/character_two"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:background="@drawable/rounded_rectangle_gray"
+        android:layout_margin="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/character_two_image"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:minWidth="100dp"
+                android:src="@drawable/empty_image"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/RoundedImageView" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/status_background"
+                app:layout_constraintBottom_toBottomOf="@+id/character_two_image"
+                app:layout_constraintEnd_toEndOf="@+id/character_two_image"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="5dp"
+                android:paddingStart="10dp">
+
+                <ImageView
+                    android:id="@+id/character_two_status_image"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/gray_circle"/>
+
+                <TextView
+                    android:id="@+id/character_two_status_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/base_character_status"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/character_two_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="@string/base_character_name"
+            android:textSize="20sp"
+            android:layout_marginHorizontal="5dp"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginVertical="5dp"
+            android:paddingHorizontal="5dp">
+
+            <TextView
+                android:id="@+id/character_two_gender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="@string/base_character_gender"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:textAlignment="viewEnd"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="|"
+                android:textSize="20sp"
+                android:layout_marginHorizontal="5dp"/>
+
+            <TextView
+                android:id="@+id/character_two_species"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="@string/base_character_species"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:textAlignment="viewStart"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
